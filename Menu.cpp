@@ -9,7 +9,7 @@ void Menu::main_menu()
         switch (show_options())
         {
         case 1:
-            show_all_humans();
+            show_all_persons();
             break;
         case 2:
             change_data();
@@ -24,7 +24,7 @@ void Menu::main_menu()
             load_from_file();
             break;
         case 6:
-            delete_human();
+            delete_person();
             break;
         case 7:
             findMonster();
@@ -59,21 +59,20 @@ int Menu::show_options()
 {
     int c1;
     cout << "\nSelect menu item" << endl;
-    cout << "1 - Show all person" << endl;
+    cout << "1 - Show all characters" << endl;
     cout << "2 - Change persons's data" << endl;
-    cout << "3 - Add new persons" << endl;
+    cout << "3 - Add new character" << endl;
     cout << "4 - Save all changes to the file" << endl;
     cout << "5 - Load data from the file" << endl;
-    cout << "6 - Delete a person" << endl;
-    //To work correctly, you need to enter a real number, with two numbers after the dot
-    cout << "7 - Output description appearance for find Monster" << endl;
+    cout << "6 - Delete character" << endl;
+    cout << "7 - Find Shrek :)" << endl;
     cout << "0 - Exit" << endl;
     cout << "->  ";
     cin >> c1;
     return c1;
 }
 
-void Menu::show_all_humans()
+void Menu::show_all_persons()
 {
     system("cls");
     try
@@ -99,7 +98,7 @@ void Menu::change_data()
     system("cls");
     try
     {
-        cout << "What human do you want to change (from 1 to " << list.get_size() << ")?" << endl;
+        cout << "What person do you want to change (from 1 to " << list.get_size() << ")?" << endl;
         cin >> c2;
 
         if ((c2 < 1) || (c2 > list.get_size()))
@@ -216,7 +215,7 @@ void Menu::load_from_file()
     catch (const char* ex) { cout << ex << endl; }
 }
 
-void Menu::delete_human()
+void Menu::delete_person()
 {
     int c2;
     system("cls");
